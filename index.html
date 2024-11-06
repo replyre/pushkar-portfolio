@@ -68,9 +68,6 @@
       id="section-home"
       data-stellar-background-ratio="0.5"
     >
-      <div id="loading-spinner">
-        <img src="/images/loader.gif" alt="" />
-      </div>
       <div class="container">
         <div class="row intro-text align-items-center justify-content-center">
           <div class="col-md-10 text-center pt-5">
@@ -112,16 +109,13 @@
               <div class="relative">
                 <div class="thumb">
                   <div class="overlay overlay-bg"></div>
-                  <img
-                    class="image img-fluid"
-                    src="images/preview.gif"
-                    data-src="images/p4.png"
-                    alt=""
-                  />
+                  <img class="image img-fluid" src="images/p4.png" alt="" />
                 </div>
                 <a href="images/p4.png" class="img-pop-up">
                   <div class="middle">
-                    <div class="text align-self-center d-flex"></div>
+                    <div class="text align-self-center d-flex">
+                      <img src="images/preview.png" alt="" />
+                    </div>
                   </div>
                 </a>
               </div>
@@ -137,16 +131,13 @@
               <div class="relative">
                 <div class="thumb">
                   <div class="overlay overlay-bg"></div>
-                  <img
-                    class="image img-fluid"
-                    src="images/preview.gif"
-                    data-src="images/p5.png"
-                    alt=""
-                  />
+                  <img class="image img-fluid" src="images/p5.png" alt="" />
                 </div>
                 <a href="images/p5.png" class="img-pop-up">
                   <div class="middle">
-                    <div class="text align-self-center d-flex"></div>
+                    <div class="text align-self-center d-flex">
+                      <img src="images/preview.png" alt="" />
+                    </div>
                   </div>
                 </a>
               </div>
@@ -162,16 +153,13 @@
               <div class="relative">
                 <div class="thumb">
                   <div class="overlay overlay-bg"></div>
-                  <img
-                    class="image img-fluid"
-                    src="images/preview.gif"
-                    data-src="images/p3.png"
-                    alt=""
-                  />
+                  <img class="image img-fluid" src="images/p3.png" alt="" />
                 </div>
                 <a href="images/p3.png" class="img-pop-up">
                   <div class="middle">
-                    <div class="text align-self-center d-flex"></div>
+                    <div class="text align-self-center d-flex">
+                      <img src="images/preview.png" alt="" />
+                    </div>
                   </div>
                 </a>
               </div>
@@ -184,16 +172,13 @@
               <div class="relative">
                 <div class="thumb">
                   <div class="overlay overlay-bg"></div>
-                  <img
-                    class="image img-fluid"
-                    src="images/preview.gif"
-                    data-src="images/p6.png"
-                    alt=""
-                  />
+                  <img class="image img-fluid" src="images/p6.png" alt="" />
                 </div>
                 <a href="images/p6.png" class="img-pop-up">
                   <div class="middle">
-                    <div class="text align-self-center d-flex"></div>
+                    <div class="text align-self-center d-flex">
+                      <img src="images/preview.png" alt="" />
+                    </div>
                   </div>
                 </a>
               </div>
@@ -206,16 +191,13 @@
               <div class="relative">
                 <div class="thumb">
                   <div class="overlay overlay-bg"></div>
-                  <img
-                    class="image img-fluid"
-                    src="images/preview.gif"
-                    data-src="images/p1.png"
-                    alt=""
-                  />
+                  <img class="image img-fluid" src="images/p1.png" alt="" />
                 </div>
                 <a href="images/p1.png" class="img-pop-up">
                   <div class="middle">
-                    <div class="text align-self-center d-flex"></div>
+                    <div class="text align-self-center d-flex">
+                      <img src="images/preview.png" alt="" />
+                    </div>
                   </div>
                 </a>
               </div>
@@ -228,16 +210,13 @@
               <div class="relative">
                 <div class="thumb">
                   <div class="overlay overlay-bg"></div>
-                  <img
-                    class="image img-fluid"
-                    src="images/preview.gif"
-                    data-src="images/p2.png"
-                    alt=""
-                  />
+                  <img class="image img-fluid" src="images/p2.png" alt="" />
                 </div>
                 <a href="images/p2.png" class="img-pop-up">
                   <div class="middle">
-                    <div class="text align-self-center d-flex"></div>
+                    <div class="text align-self-center d-flex">
+                      <img src="images/preview.png" alt="" />
+                    </div>
                   </div>
                 </a>
               </div>
@@ -723,32 +702,5 @@
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="js/custom.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const sectionHome = document.getElementById("section-home");
-        const bgImage = new Image();
-        bgImage.src = "../images/img123.gif";
-
-        bgImage.onload = function () {
-          sectionHome.classList.add("loaded");
-        };
-      });
-      document.addEventListener("DOMContentLoaded", function () {
-        const images = document.querySelectorAll(".image");
-
-        images.forEach((img) => {
-          const realSrc = img.getAttribute("data-src");
-
-          // Create a temporary image to load the actual image
-          const tempImg = new Image();
-          tempImg.src = realSrc;
-
-          tempImg.onload = function () {
-            img.src = realSrc; // Set the real image src
-            img.style.opacity = "1"; // Fade in the loaded image
-          };
-        });
-      });
-    </script>
   </body>
 </html>
