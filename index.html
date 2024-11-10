@@ -68,20 +68,22 @@
       id="section-home"
       data-stellar-background-ratio="0.5"
     >
-      <div class="container">
+      <div class="loader" id="loader"></div>
+      <div class="container" id="content" style="display: none">
         <div class="row intro-text align-items-center justify-content-center">
           <div class="col-md-10 text-center pt-5">
             <h1 class="site-heading site-animate">
               Hello, I'm <strong class="d-block">Pushkar Gupta</strong>
             </h1>
             <h3 class="site-heading site-animate">Graphic Designer</h3>
-            <strong class="d-block text-white text-uppercase letter-spacing"
-              >and this is My Portfolio</strong
-            >
+            <strong class="d-block text-white text-uppercase letter-spacing">
+              and this is My Portfolio
+            </strong>
           </div>
         </div>
       </div>
     </section>
+
     <!-- section -->
 
     <section
@@ -114,7 +116,7 @@
                 <a href="images/p4.png" class="img-pop-up">
                   <div class="middle">
                     <div class="text align-self-center d-flex">
-                      <img src="images/preview.png" alt="" />
+                      <img src="images/p4.png" alt="" class="preview" />
                     </div>
                   </div>
                 </a>
@@ -136,7 +138,7 @@
                 <a href="images/p5.png" class="img-pop-up">
                   <div class="middle">
                     <div class="text align-self-center d-flex">
-                      <img src="images/preview.png" alt="" />
+                      <img src="images/p5.png" alt="" class="preview" />
                     </div>
                   </div>
                 </a>
@@ -158,7 +160,7 @@
                 <a href="images/p3.png" class="img-pop-up">
                   <div class="middle">
                     <div class="text align-self-center d-flex">
-                      <img src="images/preview.png" alt="" />
+                      <img src="images/p3.png" alt="" class="preview" />
                     </div>
                   </div>
                 </a>
@@ -177,7 +179,7 @@
                 <a href="images/p6.png" class="img-pop-up">
                   <div class="middle">
                     <div class="text align-self-center d-flex">
-                      <img src="images/preview.png" alt="" />
+                      <img src="images/p6.png" alt="" class="preview" />
                     </div>
                   </div>
                 </a>
@@ -196,7 +198,7 @@
                 <a href="images/p1.png" class="img-pop-up">
                   <div class="middle">
                     <div class="text align-self-center d-flex">
-                      <img src="images/preview.png" alt="" />
+                      <img src="images/p1.png" alt="" class="preview" />
                     </div>
                   </div>
                 </a>
@@ -215,7 +217,7 @@
                 <a href="images/p2.png" class="img-pop-up">
                   <div class="middle">
                     <div class="text align-self-center d-flex">
-                      <img src="images/preview.png" alt="" />
+                      <img src="images/p2.png" alt="" class="preview" />
                     </div>
                   </div>
                 </a>
@@ -702,5 +704,39 @@
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sectionHome = document.getElementById("section-home");
+        const loader = document.getElementById("loader");
+        const content = document.getElementById("content");
+
+        // Create an Image object to preload the background image
+        const bgImage = new Image();
+        bgImage.src = "../images/img123.gif"; // Use the same path as your CSS background image
+
+        bgImage.onload = function () {
+          sectionHome.style.backgroundImage = `url('${bgImage.src}')`;
+          loader.style.display = "none";
+          content.style.display = "block"; // Show content after image loads
+        };
+
+        bgImage.onerror = function () {
+          console.error("Background image failed to load.");
+        };
+      });
+      document.querySelectorAll(".preview").forEach((preview) => {
+        preview.addEventListener("mouseenter", function () {
+          const container = preview.closest(".single-portfolio"); // Find the closest single-portfolio container
+          const imgFluid = container.querySelector(".img-fluid"); // Get the corresponding .img-fluid
+          imgFluid.classList.add("hover-effect");
+        });
+
+        preview.addEventListener("mouseleave", function () {
+          const container = preview.closest(".single-portfolio");
+          const imgFluid = container.querySelector(".img-fluid");
+          imgFluid.classList.remove("hover-effect");
+        });
+      });
+    </script>
   </body>
 </html>
