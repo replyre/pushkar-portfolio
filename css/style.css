@@ -847,7 +847,7 @@ a:active {
   width: 100%;
 }
 
-.img-fluid:hover {
+.img-portfolio:hover {
   filter: blur(4px);
   border: 2px solid black;
 }
